@@ -5,7 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Usuario = Hero(
+    final usuario = Hero(
       tag: 'hero',
       child: Padding(
         padding: EdgeInsets.all(16.0),
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
         ]),
       ),
       child: Column(
-        children: <Widget>[Usuario, welcome, lorem],
+        children: <Widget>[usuario, welcome, lorem],
       ),
     );
 

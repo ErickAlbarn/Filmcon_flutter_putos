@@ -16,6 +16,8 @@ dependencies:
   flutter:
     sdk: flutter
   carousel_pro: ^0.0.13
+  cloud_firestore: ^0.8.2
+  flutter_facebook_login: ^1.2.0
 
 
 
@@ -33,6 +35,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  assets:
+      - assets/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

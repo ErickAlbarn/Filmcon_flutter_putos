@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 48.0,
-        child: Image.asset('Linage_OS_Logo.png'),
+        child: Image.asset('assets/Logo.png'),
       ),
     );
 
@@ -25,14 +25,17 @@ class _LoginPageState extends State<LoginPage> {
 
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: 'xxxxxx@xxxx.com',
+
 
       decoration: InputDecoration(
 
         hintText: 'Email',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+
       ),
+      style: TextStyle(color: Colors.white),
+
     );
 
     final password = TextFormField(
@@ -43,7 +46,9 @@ class _LoginPageState extends State<LoginPage> {
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+
       ),
+      style: TextStyle(color: Colors.white),
     );
 
     final loginButton = Padding(
@@ -56,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).pushNamed(HomePage.tag);
         },
         padding: EdgeInsets.all(12),
-        color: Colors.lightBlueAccent,
+        color: Colors.teal,
         child: Text('Log In', style: TextStyle(color: Colors.white)),
       ),
     );
@@ -64,16 +69,26 @@ class _LoginPageState extends State<LoginPage> {
     final forgotLabel = FlatButton(
       child: Text(
         'Forgot password?',
-        style: TextStyle(color: Colors.black54),
+        style: TextStyle(color: Colors.white),
       ),
       onPressed: () {},
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF232323),
       body: Center(
+        child: new Theme(
+        data: new ThemeData(
+        primaryColor: Colors.teal,
+            hintColor: Colors.white,
+
+
+
+    ),
+
         child: ListView(
           shrinkWrap: true,
+          physics: ClampingScrollPhysics(),
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             logo,
@@ -86,6 +101,7 @@ class _LoginPageState extends State<LoginPage> {
             forgotLabel
           ],
         ),
+        )
       ),
     );
   }
